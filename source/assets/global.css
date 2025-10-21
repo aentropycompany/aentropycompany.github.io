@@ -1,0 +1,81 @@
+@import 'tailwindcss';
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+
+  html,
+  body {
+    @apply bg-zinc-50 dark:bg-zinc-950 text-zinc-950 dark:text-zinc-50;
+  }
+
+  h1 {
+    @apply text-3xl font-bold tracking-tight;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold tracking-tight;
+  }
+
+  h3 {
+    @apply text-lg font-semibold;
+  }
+
+  p {
+    @apply text-base leading-relaxed;
+  }
+
+  a {
+    @apply text-blue-700 dark:text-blue-400 hover:underline;
+  }
+}
+
+@layer components {
+  .typography h1 {
+    @apply mt-2 mb-4;
+  }
+
+  .typography h2 {
+    @apply mt-4 mb-2;
+  }
+
+  .typography h3 {
+    @apply mt-3 mb-1.5;
+  }
+
+  .typography p {
+    @apply mt-2 mb-0;
+  }
+
+  .typography ul {
+    @apply my-2 pl-5 list-disc;
+  }
+
+  .typography ol {
+    @apply my-2 pl-5 list-decimal;
+  }
+
+  .typography ul > li + li,
+  .typography ol > li + li {
+    @apply mt-1;
+  }
+
+  .typography > :first-child {
+    @apply mt-0;
+  }
+
+  .typography > :last-child {
+    @apply mb-0;
+  }
+}
+
+@layer utilities {
+  .background-primary {
+    @apply bg-zinc-50 dark:bg-zinc-950;
+  }
+
+  .text-primary {
+    @apply text-zinc-950 dark:text-zinc-50;
+  }
+}
