@@ -1,93 +1,47 @@
 ---
-import Page from '@layouts/Page.astro';
+import PageHead from '@layouts/PageHead.astro';
 ---
 
-<Page title="The Aentropy Company" description="The less you think, the clearer it becomes">
-  <div class="w-full max-w-[576px] mx-auto min-h-screen flex flex-col items-stretch justify-center p-4">
-    <div class="typography">
+<PageHead title="The Aentropy Company" description="The less you think, the clearer it becomes">
+  <div class="typography min-h-screen mx-auto p-4">
+    <div class="block">
       <h1>The Aentropy Company</h1>
       <p>We try to reduce entropy everywhere — in design, in code, and in how things are meant to be.</p>
     </div>
-    <div class="typography mt-5">
+    <div class="block">
       <h3>Projects</h3>
       <p>
         <a href="https://unistash.io" target="_blank">Unistash</a> — The Explore Application for <a
           href="https://ton.org"
           target="_blank">The Open Network</a
         >
-        <br />
       </p>
     </div>
-    <div class="typography mt-5">
+    <div class="block">
       <h3>Contacts</h3>
       <p>
         <a href="mailto:hello@theaentropy.company">hello@theaentropy.company</a>
       </p>
     </div>
-    <ul class="mt-5 flex gap-6 list-none">
-      <li>
-        <a
-          href="https://x.com/aentropycompany"
-          rel="noreferrer"
-          target="_blank"
-          class="text-primary transition hover:opacity-75"
-        >
-          <span class="sr-only">X</span>
-          <svg class="size-6" fill="currentColor" viewBox="0 0 48 48" aria-hidden="true">
-            <path
-              d="M36.6526 3.8078H43.3995L28.6594 20.6548L46 43.5797H32.4225L21.7881 29.6759L9.61989 43.5797H2.86886L18.6349 25.56L2 3.8078H15.9222L25.5348 16.5165L36.6526 3.8078ZM34.2846 39.5414H38.0232L13.8908 7.63406H9.87892L34.2846 39.5414Z"
-            ></path>
-          </svg>
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://t.me/aentropycompany"
-          rel="noreferrer"
-          target="_blank"
-          class="text-primary transition hover:opacity-75"
-        >
-          <span class="sr-only">Telegram</span>
-          <svg class="size-6" fill="currentColor" viewBox="0 0 48 48" aria-hidden="true">
-            <g clip-path="url(#clip0_318_75)">
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M48 24C48 37.2548 37.2548 48 24 48C10.7452 48 0 37.2548 0 24C0 10.7452 10.7452 0 24 0C37.2548 0 48 10.7452 48 24ZM24.8601 17.7179C22.5257 18.6888 17.8603 20.6984 10.8638 23.7466C9.72766 24.1984 9.13251 24.6404 9.07834 25.0726C8.98677 25.803 9.90142 26.0906 11.1469 26.4822C11.3164 26.5355 11.4919 26.5907 11.6719 26.6492C12.8973 27.0475 14.5457 27.5135 15.4026 27.5321C16.1799 27.5489 17.0475 27.2284 18.0053 26.5707C24.5423 22.158 27.9168 19.9276 28.1286 19.8795C28.2781 19.8456 28.4852 19.803 28.6255 19.9277C28.7659 20.0524 28.7521 20.2886 28.7372 20.352C28.6466 20.7383 25.0562 24.0762 23.1982 25.8036C22.619 26.3421 22.2081 26.724 22.1242 26.8113C21.936 27.0067 21.7443 27.1915 21.56 27.3692C20.4215 28.4667 19.5678 29.2896 21.6072 30.6336C22.5873 31.2794 23.3715 31.8135 24.1539 32.3463C25.0084 32.9282 25.8606 33.5085 26.9632 34.2313C27.2442 34.4155 27.5125 34.6068 27.7738 34.7931C28.7681 35.5019 29.6615 36.1388 30.7652 36.0373C31.4065 35.9782 32.0689 35.3752 32.4053 33.5767C33.2004 29.3263 34.7633 20.1169 35.1244 16.3219C35.1561 15.9895 35.1163 15.5639 35.0843 15.3771C35.0523 15.1904 34.9855 14.9242 34.7427 14.7272C34.4552 14.4939 34.0113 14.4447 33.8127 14.4482C32.91 14.4641 31.5251 14.9456 24.8601 17.7179Z"
-              ></path>
-            </g>
-            <defs>
-              <clipPath id="clip0_318_75">
-                <rect width="48" height="48"></rect>
-              </clipPath>
-            </defs>
-          </svg>
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/aentropycompany"
-          rel="noreferrer"
-          target="_blank"
-          class="text-primary transition hover:opacity-75"
-        >
-          <span class="sr-only">GitHub</span>
-          <svg class="size-6" fill="currentColor" viewBox="0 0 48 48" aria-hidden="true">
-            <g clip-path="url(#clip0_910_44)">
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M24.0199 0C10.7375 0 0 10.8167 0 24.1983C0 34.895 6.87988 43.9495 16.4241 47.1542C17.6174 47.3951 18.0545 46.6335 18.0545 45.9929C18.0545 45.4319 18.0151 43.509 18.0151 41.5055C11.3334 42.948 9.94198 38.6209 9.94198 38.6209C8.86818 35.8164 7.27715 35.0956 7.27715 35.0956C5.09022 33.6132 7.43645 33.6132 7.43645 33.6132C9.86233 33.7735 11.1353 36.0971 11.1353 36.0971C13.2824 39.7827 16.7422 38.7413 18.1341 38.1002C18.3328 36.5377 18.9695 35.456 19.6455 34.8552C14.3163 34.2942 8.70937 32.211 8.70937 22.9161C8.70937 20.2719 9.66321 18.1086 11.1746 16.4261C10.9361 15.8253 10.1008 13.3409 11.4135 10.0157C11.4135 10.0157 13.4417 9.3746 18.0146 12.4996C19.9725 11.9699 21.9916 11.7005 24.0199 11.6982C26.048 11.6982 28.1154 11.979 30.0246 12.4996C34.5981 9.3746 36.6262 10.0157 36.6262 10.0157C37.9389 13.3409 37.1031 15.8253 36.8646 16.4261C38.4158 18.1086 39.3303 20.2719 39.3303 22.9161C39.3303 32.211 33.7234 34.2539 28.3544 34.8552C29.2296 35.6163 29.9848 37.0583 29.9848 39.3421C29.9848 42.5871 29.9454 45.1915 29.9454 45.9924C29.9454 46.6335 30.383 47.3951 31.5758 47.1547C41.12 43.9491 47.9999 34.895 47.9999 24.1983C48.0392 10.8167 37.2624 0 24.0199 0Z"
-              ></path>
-            </g>
-            <defs>
-              <clipPath id="clip0_910_44">
-                <rect width="48" height="48"></rect>
-              </clipPath>
-            </defs>
-          </svg>
-        </a>
-      </li>
-    </ul>
+    <div class="flex flex-row gap-4">
+      <a href="https://x.com/aentropycompany" rel="noreferrer" target="_blank">
+        <span class="sr-only">X</span>
+        <svg class="icon-primary" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M15.7512 0.833313H18.818L12.1179 8.59914L20 19.1666H13.8284L8.99459 12.7575L3.46359 19.1666H0.394936L7.56132 10.8603L0 0.833313H6.32827L10.6976 6.69154L15.7512 0.833313ZM14.6748 17.3051H16.3742L5.40491 2.59707H3.58133L14.6748 17.3051Z"
+          ></path>
+        </svg>
+      </a>
+      <a href="https://github.com/aentropycompany" rel="noreferrer" target="_blank">
+        <span class="sr-only">GitHub</span>
+        <svg class="icon-primary" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M10.0083 0C4.47396 0 0 4.58334 0 10.2535C0 14.786 2.86662 18.6226 6.84338 19.9805C7.34058 20.0826 7.52271 19.7599 7.52271 19.4885C7.52271 19.2508 7.50629 18.436 7.50629 17.587C4.72225 18.1983 4.14249 16.3647 4.14249 16.3647C3.69508 15.1764 3.03215 14.871 3.03215 14.871C2.12093 14.2428 3.09852 14.2428 3.09852 14.2428C4.1093 14.3108 4.63971 15.2953 4.63971 15.2953C5.53433 16.857 6.97592 16.4158 7.55588 16.1441C7.63867 15.482 7.90396 15.0237 8.18563 14.7691C5.96513 14.5314 3.6289 13.6487 3.6289 9.71019C3.6289 8.58977 4.02634 7.67312 4.65608 6.96019C4.55671 6.70562 4.20867 5.65291 4.75563 4.24393C4.75563 4.24393 5.60071 3.97228 7.50608 5.29643C8.32188 5.07198 9.16317 4.95783 10.0083 4.95685C10.8533 4.95685 11.7148 5.07583 12.5103 5.29643C14.4159 3.97228 15.2609 4.24393 15.2609 4.24393C15.8079 5.65291 15.4596 6.70562 15.3603 6.96019C16.0066 7.67312 16.3876 8.58977 16.3876 9.71019C16.3876 13.6487 14.0514 14.5143 11.8143 14.7691C12.179 15.0916 12.4937 15.7026 12.4937 16.6703C12.4937 18.0453 12.4773 19.1489 12.4773 19.4883C12.4773 19.7599 12.6596 20.0826 13.1566 19.9808C17.1333 18.6225 20 14.786 20 10.2535C20.0163 4.58334 15.526 0 10.0083 0Z"
+          ></path>
+        </svg>
+      </a>
+    </div>
   </div>
-</Page>
+</PageHead>
