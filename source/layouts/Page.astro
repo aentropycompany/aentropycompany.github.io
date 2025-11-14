@@ -13,7 +13,8 @@ interface Props {
     <meta charset="UTF-8" />
 
     <meta name="viewport" content="width=device-width" />
-    <meta name="color-scheme" content="dark light" />
+    <!-- <meta name="color-scheme" content="dark light" /> -->
+    <meta name="color-scheme" content="light" />
     <meta name="generator" content={Astro.generator} />
 
     <link rel="icon" href="/favicon.ico" />
@@ -41,7 +42,5 @@ interface Props {
 
     <title>{Astro.props.title}</title>
   </head>
-  <body>
-    <slot />
-  </body>
+  <body><slot /></body>
 </html>

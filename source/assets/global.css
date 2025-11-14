@@ -14,8 +14,11 @@
   --color-pallete-text-secondary: #3a3a3a;
   --color-pallete-text-teritary: #6d6d6d;
 
-  --color-pallete-separator-primary: rgba(0, 0, 0, 0.18);
+  --color-pallete-separator-primary: rgba(0, 0, 0, 0.12);
   --color-pallete-separator-opaque: #1f1f1f;
+
+  --color-palette-button-primary-foreground: #fcfcfc;
+  --color-palette-button-primary-background: #030303;
 
   --color-pallete-icon-primary: #1f1f1f;
   --color-pallete-link: #2957e6;
@@ -54,7 +57,7 @@
 }
 
 @layer base {
-  @media (prefers-color-scheme: dark) {
+  /* @media (prefers-color-scheme: dark) {
     :root {
       --color-pallete-background-primary: #030303;
       --color-pallete-background-secondary: #0a0a0a;
@@ -67,20 +70,22 @@
       --color-pallete-text-secondary: #b0b0b0;
       --color-pallete-text-teritary: #808080;
 
-      --color-pallete-separator-primary: rgba(255, 255, 255, 0.16);
+      --color-pallete-separator-primary: rgba(255, 255, 255, 0.1);
       --color-pallete-separator-opaque: #666666;
+
+      --color-palette-button-primary-foreground: #030303;
+      --color-palette-button-primary-background: #fcfcfc;
 
       --color-pallete-icon-primary: #e5e5e5;
       --color-pallete-link: #4182cc;
     }
-  }
+  } */
 
   html {
     @apply antialiased font-sans;
   }
 
-  html,
-  body {
+  html, body {
     @apply bg-pallete-background-primary;
   }
 
@@ -110,7 +115,7 @@
     @apply w-full max-w-[576px] flex flex-col items-stretch justify-center gap-6;
   }
 
-  .typography block {
+  .typography .paragraph {
     @apply flex flex-col gap-2;
   }
 
@@ -166,5 +171,9 @@
 
   .icon-primary {
     @apply fill-pallete-icon-primary transition hover:opacity-80;
+  }
+
+  .button-primary {
+    @apply bg-palette-button-primary-background text-palette-button-primary-foreground fill-palette-button-primary-foreground text-base font-medium h-11 px-6 transition hover:opacity-80 cursor-pointer rounded-full;
   }
 }
