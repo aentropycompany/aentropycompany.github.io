@@ -34,10 +34,12 @@
   --tracking-wider: 0.05em;
   --tracking-widest: 0.1em;
 
-  --text-3xl: 1.875rem;
-  --text-2xl: 1.5rem;
-  --text-xl: 1.125rem;
-  --text-base: 1rem;
+  --text-h1: 1.875rem;
+  --text-h2: 1.5rem;
+  --text-h3: 1.125rem;
+  --text-body: 1rem;
+  --text-headline: 1rem;
+  --text-footnote: 0.8175rem;
 
   --font-weight-thin: 100;
   --font-weight-extralight: 200;
@@ -90,19 +92,19 @@
   }
 
   h1 {
-    @apply text-3xl font-bold tracking-tight;
+    @apply text-h1 leading-9.5 font-bold tracking-tight;
   }
 
   h2 {
-    @apply text-2xl font-semibold tracking-tight;
+    @apply text-h2 leading-7.5 font-semibold tracking-tight;
   }
 
   h3 {
-    @apply text-xl font-semibold;
+    @apply text-h3 leading-6 font-semibold;
   }
 
   p {
-    @apply text-base leading-relaxed;
+    @apply text-body leading-5;
   }
 
   a {
@@ -174,6 +176,6 @@
   }
 
   .button-primary {
-    @apply bg-palette-button-primary-background text-palette-button-primary-foreground fill-palette-button-primary-foreground text-base font-medium h-11 px-6 transition hover:opacity-80 cursor-pointer rounded-full;
+    @apply bg-palette-button-primary-background text-palette-button-primary-foreground fill-palette-button-primary-foreground text-headline font-semibold align-middle h-11 px-6 transition hover:opacity-80 cursor-pointer rounded-full;
   }
 }
