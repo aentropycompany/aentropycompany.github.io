@@ -1,0 +1,181 @@
+@import 'tailwindcss';
+
+@theme {
+  --*: initial;
+
+  --color-pallete-background-primary: #fafafa;
+  --color-pallete-background-secondary: #ebebeb;
+  --color-pallete-background-teritary: #dbdbdb;
+
+  --color-pallete-background-grouped-primary: #ebebeb;
+  --color-pallete-background-grouped-secondary: #fafafa;
+
+  --color-pallete-text-primary: #1a1a1a;
+  --color-pallete-text-secondary: #3a3a3a;
+  --color-pallete-text-teritary: #6d6d6d;
+
+  --color-pallete-separator-primary: rgba(0, 0, 0, 0.12);
+  --color-pallete-separator-opaque: #1f1f1f;
+
+  --color-palette-button-primary-foreground: #fcfcfc;
+  --color-palette-button-primary-background: #030303;
+
+  --color-pallete-icon-primary: #1f1f1f;
+  --color-pallete-link: #2957e6;
+
+  --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+
+  --spacing: 0.25rem;
+
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+
+  --text-h1: 1.875rem;
+  --text-h2: 1.5rem;
+  --text-h3: 1.125rem;
+  --text-body: 1rem;
+  --text-headline: 1rem;
+  --text-footnote: 0.8175rem;
+
+  --font-weight-thin: 100;
+  --font-weight-extralight: 200;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+}
+
+@layer base {
+  /* @media (prefers-color-scheme: dark) {
+    :root {
+      --color-pallete-background-primary: #030303;
+      --color-pallete-background-secondary: #0a0a0a;
+      --color-pallete-background-teritary: #0f0f0f;
+
+      --color-pallete-background-grouped-primary: #0f0f0f;
+      --color-pallete-background-grouped-secondary: #050505;
+
+      --color-pallete-text-primary: #e8e8e8;
+      --color-pallete-text-secondary: #b0b0b0;
+      --color-pallete-text-teritary: #808080;
+
+      --color-pallete-separator-primary: rgba(255, 255, 255, 0.1);
+      --color-pallete-separator-opaque: #666666;
+
+      --color-palette-button-primary-foreground: #030303;
+      --color-palette-button-primary-background: #fcfcfc;
+
+      --color-pallete-icon-primary: #e5e5e5;
+      --color-pallete-link: #4182cc;
+    }
+  } */
+
+  html {
+    @apply antialiased font-sans;
+  }
+
+  html, body {
+    @apply bg-pallete-background-primary;
+  }
+
+  h1 {
+    @apply text-h1 leading-9.5 font-bold tracking-tight;
+  }
+
+  h2 {
+    @apply text-h2 leading-7.5 font-semibold tracking-tight;
+  }
+
+  h3 {
+    @apply text-h3 leading-6 font-semibold;
+  }
+
+  p {
+    @apply text-body leading-5;
+  }
+
+  a {
+    @apply text-pallete-link hover:underline;
+  }
+}
+
+@layer components {
+  .typography {
+    @apply w-full max-w-[576px] flex flex-col items-stretch justify-center gap-6;
+  }
+
+  .typography .paragraph {
+    @apply flex flex-col gap-2;
+  }
+
+  .typography h1 {
+    @apply mb-1.5;
+  }
+
+  .typography h2 {
+    @apply mb-1;
+  }
+
+  .typography h3 {
+    @apply mb-0.5;
+  }
+
+  .typography p {
+    @apply font-normal;
+  }
+}
+
+@layer utilities {
+  .background-primary {
+    @apply bg-pallete-background-primary;
+  }
+
+  .background-secondary {
+    @apply bg-pallete-background-secondary;
+  }
+
+  .background-teritary {
+    @apply bg-pallete-background-teritary;
+  }
+
+  .background-grouped-primary {
+    @apply bg-pallete-background-grouped-primary;
+  }
+
+  .background-grouped-secondary {
+    @apply bg-pallete-background-grouped-secondary;
+  }
+
+  .text-primary {
+    @apply text-pallete-text-primary;
+  }
+
+  .text-secondary {
+    @apply text-pallete-text-secondary;
+  }
+
+  .text-teritary {
+    @apply text-pallete-text-teritary;
+  }
+
+  .icon-primary {
+    @apply fill-pallete-icon-primary transition hover:opacity-80;
+  }
+
+  .button-primary {
+    @apply bg-palette-button-primary-background text-palette-button-primary-foreground fill-palette-button-primary-foreground text-headline font-semibold align-middle h-11 px-6 transition hover:opacity-80 cursor-pointer rounded-full;
+  }
+}

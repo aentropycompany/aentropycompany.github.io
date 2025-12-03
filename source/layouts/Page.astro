@@ -1,0 +1,46 @@
+---
+import '@assets/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+}
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width" />
+    <!-- <meta name="color-scheme" content="dark light" /> -->
+    <meta name="color-scheme" content="light" />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <meta name="apple-mobile-web-app-title" content="Aentropy" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)" />
+
+    <meta property="og:site_name" content="The Aentropy Company" />
+    <meta property="og:title" content={Astro.props.title} />
+    <meta property="og:description" content={Astro.props.description} />
+    <meta property="og:url" content="https://theaentropy.company" />
+    <meta property="og:image" content="/og.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={Astro.props.title} />
+    <meta name="twitter:description" content={Astro.props.description} />
+    <meta name="twitter:url" content="https://theaentropy.company" />
+    <meta name="twitter:image" content="/og.png" />
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <title>{Astro.props.title}</title>
+  </head>
+  <body><slot /></body>
+</html>
