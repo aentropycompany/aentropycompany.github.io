@@ -1,5 +1,6 @@
 ---
 import Page from '@layouts/Page.astro';
+const year = new Date().getFullYear();
 ---
 
 <Page title="The Aentropy Company" description="The less you think, the clearer it becomes">
@@ -44,4 +45,13 @@ import Page from '@layouts/Page.astro';
       </a>
     </div>
   </div>
+  <footer>
+    <div class="typography mx-auto px-4">
+      <div class="py-7 flex flex-row gap-8">
+        <span class="text-teritary text-footnote font-medium">
+          Copyright © {year} The Aentropy Company. All rights reserved.
+        </span>
+      </div>
+    </div>
+  </footer>
 </Page>
