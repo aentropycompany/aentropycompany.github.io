@@ -1,4 +1,9 @@
 ---
+/**
+ * Page
+ * Base HTML layout with font loading, dark mode init, and meta.
+ * Tokens used: background-primary, fg-primary
+ */
 import '@assets/global.css';
 
 interface Props {
@@ -11,10 +16,8 @@ interface Props {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
-    <meta name="viewport" content="width=device-width" />
-    <!-- <meta name="color-scheme" content="dark light" /> -->
-    <meta name="color-scheme" content="light" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
     <meta name="generator" content={Astro.generator} />
 
     <link rel="icon" href="/favicon.ico" />
@@ -23,8 +26,8 @@ interface Props {
     <meta name="apple-mobile-web-app-title" content="Aentropy" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f5f4f2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#060505" media="(prefers-color-scheme: dark)" />
 
     <meta property="og:site_name" content="The Aentropy Company" />
     <meta property="og:title" content={Astro.props.title} />
@@ -38,9 +41,27 @@ interface Props {
     <meta name="twitter:url" content="https://theaentropy.company" />
     <meta name="twitter:image" content="/og.png" />
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
     <title>{Astro.props.title}</title>
+
+    <!-- Light mode primary (P9). Falls back to OS preference. Reacts to system changes. -->
+    <script is:inline>
+      (function() {
+        var mq = window.matchMedia('(prefers-color-scheme: dark)');
+        function apply() {
+          var theme = localStorage.getItem('theme');
+          var isDark = theme === 'dark' || (!theme && mq.matches);
+          document.documentElement.classList.toggle('dark', isDark);
+        }
+        apply();
+        mq.addEventListener('change', apply);
+      })();
+    </script>
   </head>
-  <body><slot /></body>
+  <body>
+    <slot />
+  </body>
 </html>
