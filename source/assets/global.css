@@ -206,24 +206,45 @@
     margin-top: var(--flow-block);
   }
 
-  /* Label — mono overline/eyebrow */
-  .label {
-    @apply font-mono text-micro font-medium tracking-widest uppercase leading-tight text-fg-tertiary;
+  /* --- Icon sizes (from DNA) --- */
+
+  .icon-sm {
+    width: var(--icon-sm);
+    height: var(--icon-sm);
   }
 
-  /* Social icon link — fill-based SVG with color transition + lift */
-  .icon-link {
-    color: var(--color-fg-tertiary);
-    fill: currentColor;
-    width: var(--icon-md);
-    height: var(--icon-md);
-    transition-property: color, transform;
+  /* --- Icon Button (from DNA) --- */
+
+  .btn-icon {
+    @apply inline-flex items-center justify-center
+           w-9 h-9 rounded-full
+           cursor-pointer select-none
+           bg-transparent
+           transition-colors
+           relative;
     transition-duration: var(--duration-fast);
     transition-timing-function: var(--ease-default);
   }
 
-  .icon-link:hover {
-    color: var(--color-fg-primary);
-    transform: translateY(-1px);
+  .btn-icon::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+  }
+
+  .btn-icon:hover {
+    @apply bg-background-secondary;
+  }
+
+  .btn-icon-secondary {
+    @apply text-fg-tertiary;
+  }
+
+  .btn-icon-secondary:hover {
+    @apply text-fg-primary;
   }
 }
